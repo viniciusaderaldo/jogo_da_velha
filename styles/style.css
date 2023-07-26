@@ -1,0 +1,21 @@
+@import url('jogo.css');
+@import url('despedida.css');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --fonte: 'Handjet', sans-serif;
+    --corPrincipal: #7C9D96;
+    --corDestaque: #FD8A8A;
+    --corSecundaria: #F4F2DE;
+    --corBackground: #A1CCD1;
+}
+
+body{
+    font-family: var(--fonte);
+    background: var(--corBackground);
+}
