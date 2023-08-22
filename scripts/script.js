@@ -23,8 +23,8 @@ semVencedor = true;
 espacos.forEach(espaco => {
     espaco.addEventListener('click', () => {
         jogadaId = espaco.id;
-        espacoOcupado++;
         espaco.innerHTML = player;
+        espacoOcupado++;
         if(player === "X"){
             playerX.push(jogadaId);
             verificaVencedor(playerX)
@@ -43,6 +43,7 @@ espacos.forEach(espaco => {
 
 function verificaVencedor(jogadas){
     let jogadaEncontrada;
+    let num_de_testes = 0;
     wins.every(win => {
         let soma = 0;
         for(let jogada = 0; jogada < jogadas.length; jogada++){
@@ -51,10 +52,11 @@ function verificaVencedor(jogadas){
                 soma++
             }
         }
-        if(soma == 3){
+        num_de_testes++
+        if(soma >= 3 && espacoOcupado <= 9){
             semVencedor = false;
             return semVencedor;
-        } else if (soma != 3 && espacoOcupado == 9){
+        } else if (soma != 3 && espacoOcupado == 9 && num_de_testes == 8){
             campoMensagemFinal.innerHTML = `
                 <p>Deu <em>velha</em></p>
                 <button type="reset" id="jogarNovamente">jogar novamente</button>
